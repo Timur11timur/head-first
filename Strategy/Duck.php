@@ -10,6 +10,8 @@ abstract class Duck
     protected FlyBehaviorInterface $flyBehavior;
     protected QuackBehaviorInterface $quackBehavior;
 
+    abstract public function __construct();
+
     abstract public function display();
 
     public function performFly()
