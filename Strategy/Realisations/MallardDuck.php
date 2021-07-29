@@ -16,6 +16,6 @@ class MallardDuck extends Duck
 
     public function display()
     {
-        return "I'm a real " . __CLASS__;
+        return "I'm a real " . str_replace(__NAMESPACE__ . '\\', '', __CLASS__);
     }
 }
