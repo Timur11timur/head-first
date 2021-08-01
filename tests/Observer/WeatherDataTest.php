@@ -1,8 +1,9 @@
 <?php
 
-namespace Tests;
+namespace Tests\Observer;
 
 use App\Observer\Observers\CurrentConditionsDisplay;
+use App\Observer\Observers\ForecastDisplay;
 use App\Observer\Observers\StatisticDisplay;
 use App\Observer\WeatherData;
 use PHPUnit\Framework\TestCase;
@@ -29,7 +30,7 @@ class WeatherDataTest extends TestCase
     }
 
     /** @test */
-    public function check_StatisticDisplayy()
+    public function check_StatisticDisplay()
     {
         $subject = new WeatherData();
         $observer = new StatisticDisplay($subject);
@@ -46,5 +47,23 @@ class WeatherDataTest extends TestCase
         $this->expectOutputString($output);
         $subject->setMeasurements(78, 90, '29.2f');
     }
-    //Forecast Display
+
+    /** @test */
+    public function check_ForecastDisplay()
+    {
+        $subject = new WeatherData();
+        $observer = new ForecastDisplay($subject);
+
+        $output = 'Forecast: Improving weather on the way!<br>';
+        $this->expectOutputString($output);
+        $subject->setMeasurements(80, 65, '30.4f');
+
+        $output .= 'Forecast: Watch out for cooler, rainy weather<br>';
+        $this->expectOutputString($output);
+        $subject->setMeasurements(82, 70, '29.2f');
+
+        $output .= 'Forecast: More of the same<br>';
+        $this->expectOutputString($output);
+        $subject->setMeasurements(78, 90, '29.2f');
+    }
 }

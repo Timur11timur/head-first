@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Strategy\Unit;
 
 use App\Strategy\FlyBehaviors\FlyWithWings;
 use PHPUnit\Framework\TestCase;

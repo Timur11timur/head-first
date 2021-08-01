@@ -5,7 +5,6 @@ namespace App\Observer\Observers;
 use App\Observer\Interfaces\DisplaElementInterface;
 use App\Observer\Interfaces\ObserverInterface;
 use App\Observer\Interfaces\SubjectInterface;
-use phpDocumentor\Reflection\DocBlock\Tags\Formatter\AlignFormatter;
 
 class StatisticDisplay implements ObserverInterface, DisplaElementInterface
 {

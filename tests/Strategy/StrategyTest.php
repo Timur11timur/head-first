@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Strategy;
 
 use App\Strategy\Realisations\DecoyDuck;
 use App\Strategy\Realisations\MallardDuck;
