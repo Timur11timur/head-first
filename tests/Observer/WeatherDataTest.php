@@ -66,4 +66,20 @@ class WeatherDataTest extends TestCase
         $this->expectOutputString($output);
         $subject->setMeasurements(78, 90, '29.2f');
     }
+
+    /** @test */
+    public function check_allDisplays()
+    {
+        $subject = new WeatherData();
+        $observer = new CurrentConditionsDisplay($subject);
+        $observer2 = new StatisticDisplay($subject);
+        $observer3 = new ForecastDisplay($subject);
+
+
+        $output = 'Current conditions: 80F degrees and 65% humidity<br>';
+        $output .= 'Avg/Max/Min temperature = 80.0/80.0/80.0<br>';
+        $output .= 'Forecast: Improving weather on the way!<br>';
+        $this->expectOutputString($output);
+        $subject->setMeasurements(80, 65, '30.4f');
+    }
 }
