@@ -8,21 +8,21 @@ class ClamPizza implements Pizza
 {
     public function prepare()
     {
-        echo __METHOD__;
+        echo explode('::', __METHOD__)[1] . PHP_EOL;
     }
 
     public function bake()
     {
-        echo __METHOD__;
+        echo explode('::', __METHOD__)[1] . PHP_EOL;
     }
 
     public function cut()
     {
-        echo __METHOD__;
+        echo explode('::', __METHOD__)[1] . PHP_EOL;
     }
 
     public function box()
     {
-        echo __METHOD__;
+        echo explode('::', __METHOD__)[1] . PHP_EOL;
     }
 }
