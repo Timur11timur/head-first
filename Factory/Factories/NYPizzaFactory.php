@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Factory;
+namespace App\Factory\Factories;
 
 use App\Factory\Interfaces\Pizza;
 use App\Factory\Pizzas\CheesePizza;
 use App\Factory\Pizzas\ClamPizza;
 use App\Factory\Pizzas\PepperoniPizza;
 use App\Factory\Pizzas\VeggiePizza;
+use App\Factory\PizzaStore;
 
-class SimplePizzaFactory
+class NYPizzaFactory extends PizzaStore
 {
     private Pizza $pizza;
 

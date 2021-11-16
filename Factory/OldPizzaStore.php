@@ -5,11 +5,18 @@ namespace App\Factory;
 use App\Factory\Factories\SimplePizzaFactory;
 use App\Factory\Interfaces\Pizza;
 
-abstract class PizzaStore
+class OldPizzaStore
 {
+    private SimplePizzaFactory $factory;
+
+    public function __construct(SimplePizzaFactory $factory)
+    {
+        $this->factory = $factory;
+    }
+
     public function orderPizza(string $type): Pizza
     {
-        $pizza = $this->createPizza($type);
+        $pizza = $this->factory->createPizza($type);
 
         $pizza->prepare();
         $pizza->bake();
@@ -18,6 +25,4 @@ abstract class PizzaStore
 
         return $pizza;
     }
-
-    abstract function createPizza(string $type);
 }
